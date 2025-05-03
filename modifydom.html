@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>This is a List</h1>
+    <input type="text" placeholder="Enter Message" id="input">
+    <button id="button">Add to list</button>
+    <ul id="list"></ul>
+
+    <script>
+        let inputEle = document.getElementById('input')
+        let buttonEle = document.getElementById('button')
+        let listEle = document.getElementById('list')
+        buttonEle = addEventListener('click',()=>{
+            if(inputEle.value !== ""){
+                let liEle = document.createElement("li")
+                liEle.textContent = inputEle.value
+                listEle.appendChild(liEle)
+
+                let delbutton = document.createElement("button")
+                delbutton.textContent = "Delete"
+                liEle.appendChild(delbutton)
+                delbutton.addEventListener("click",()=>{
+                    liEle.remove()
+                    
+
+                })
+                inputEle.value = ""
+                
+            }
+        })
+
+    </script>
+
+</body>
+</html>
